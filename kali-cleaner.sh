@@ -21,22 +21,45 @@ echo $YELLOW"[Kali-cleaner]:Exiting..."$ENDCOLOR
 exit 0
 fi
 
-echo $YELLOW"[Kali-cleaner]:Install apt aptitude..."$ENDCOLOR
+echo $YELLOW"[Kali-cleaner]:Apt install aptitude..."$ENDCOLOR
 sudo apt install aptitude -y
- 
+echo
+
 echo $YELLOW"[Kali-cleaner]:Cleaning apt cache..."$ENDCOLOR
 sudo aptitude clean
- 
+echo
+
 echo $YELLOW"[Kali-cleaner]:Removing old config files..."$ENDCOLOR
 sudo aptitude purge $OLDCONF
- 
+
 echo $YELLOW"[Kali-cleaner]:Removing old kernels..."$ENDCOLOR
 sudo aptitude purge $OLDKERNELS
- 
+
 echo $YELLOW"[Kali-cleaner]:Emptying every trashes..."$ENDCOLOR
 rm -rf /home/*/.local/share/Trash/*/** &> /dev/null
 rm -rf /root/.local/share/Trash/*/** &> /dev/null
- 
+echo
+
+echo $YELLOW"[Kali-cleaner]:Check RAM free -h"$ENDCOLOR
+sudo free -h
+echo
+
+#echo $YELLOW"[Kali-cleaner]:Clear PageCache only"$ENDCOLOR
+#sudo sync; echo 1 > /proc/sys/vm/drop_caches && free -h
+#echo
+
+#echo $YELLOW"[Kali-cleaner]:Clear Dentries and inodes"$ENDCOLOR
+#sudo sync; echo 2 > /proc/sys/vm/drop_caches && free -h
+#echo
+
+echo $YELLOW"[Kali-cleaner]:Clear PageCache, dentries and inodes"$ENDCOLOR
+sudo sync; echo 3 > /proc/sys/vm/drop_caches && free -h
+echo
+
+echo $YELLOW"[Kali-cleaner]:Clear Swap Space"$ENDCOLOR
+sudo swapoff -a && swapon -a && free -h
+echo
+
 echo $YELLOW"[Kali-cleaner]:Script Finished!"$ENDCOLOR
 echo 
 echo $RED"Goodbye........."$ENDCOLOR
