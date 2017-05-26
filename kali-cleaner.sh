@@ -3,11 +3,11 @@ YELLOW="\033[1;33m"
 RED="\033[0;31m"
 ENDCOLOR="\033[0m"
 
-echo
+echo 
 echo $RED"==================== Kali-Cleaner ===================="$ENDCOLOR
 echo $RED"=           Cleaner for Kali by Andre myID           ="$ENDCOLOR
 echo $RED"======================================================"$ENDCOLOR
-echo
+echo 
 
 OLDCONF=$(dpkg -l|grep "^rc"|awk '{print $2}')
 CURKERNEL=$(uname -r|sed 's/-*[a-z]//g'|sed 's/-386//g')
@@ -22,7 +22,7 @@ exit 0
 fi
 
 echo $YELLOW"[Kali-cleaner]:Apt install aptitude..."$ENDCOLOR
-sudo apt install aptitude -y
+sudo apt install aptitude
 echo
 
 echo $YELLOW"[Kali-cleaner]:Cleaning apt cache..."$ENDCOLOR
@@ -62,4 +62,5 @@ echo
 
 echo $YELLOW"[Kali-cleaner]:Script Finished!"$ENDCOLOR
 echo 
-echo $RED"Goodbye........."$ENDCOLOR
+echo $RED"Goodbye..... ^.^v"$ENDCOLOR
+echo 
