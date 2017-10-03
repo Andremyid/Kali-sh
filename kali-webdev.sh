@@ -18,7 +18,7 @@ exit 0
 fi
 
 echo $LightRed"[Kali-webdev]:"$LightCyan"sh kali-updater"$End
-#sudo apt update
+sudo apt update
 echo
 
 echo $LightRed"[Kali-webdev]:"$Yellow"Apt install composer -y..."$End
@@ -81,7 +81,7 @@ echo $LightRed"[Kali-webdev]:"$Yellow"gdebi /media/root/FILES/SOFTWARE/REMOTE/te
 echo
 
 echo $LightRed"[Kali-webdev]:"$LightCyan"sh kali-cleaner.sh"$End
-#sudo sh kali-cleaner.sh
+sudo sh kali-cleaner.sh
 echo
 
 echo $LightRed"[Kali-webdev]:"$LightGreen"Kali-Web Dev Finished! Happy Coding"$End ^.^v
