@@ -17,6 +17,10 @@ echo $LightRed"[Kali-updater]:"$Yellow"Exiting..."$End
 exit 0
 fi
 
+# If the error message appears "The following signatures were invalid:"
+# wget https://http.kali.org/kali/pool/main/k/kali-archive-keyring/kali-archive-keyring_2018.1_all.deb
+# apt install ./kali-archive-keyring_2018.1_all.deb
+
 echo $LightRed"[Kali-updater]:"$Yellow"Apt update"$End
 sudo apt update
 echo
